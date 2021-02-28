@@ -64,7 +64,7 @@ int main() {
   C1.display();
   cout << "C2 = ";
   C2.display();
-  cout << "C3 = ";
+  cout << "C3 = ";//yhjk
   C3.display();
 
   return 0;
