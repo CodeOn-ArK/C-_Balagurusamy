@@ -11,16 +11,13 @@ class Complex {
 
  protected:
  public:
-  Complex() {
-    x = 0.0;
-    y = 0.0;
-  }
+  Complex() {};
 
   Complex(float real, float img) {
     x = real;
     y = img;
   }
-  void getdata();
+  Complex getdata();
 
   Complex operator+(Complex);
   void display();
@@ -38,27 +35,23 @@ Complex Complex::operator+(Complex w) {
 
 void Complex::display(void) { cout << x << " + j" << y << endl; }
 
-void Complex::getdata() {
+Complex Complex::getdata() {
   float img, real;
 
   cout << "Enter img && real part\n";
   cin >> img >> real;
  
-  x += real;
-  y += img;
- 
-//  display();
-
-//  Complex(real, img);
+  Complex C = Complex(real,img);
+  return C;
 }
 /*********************-END-************************/
 
 int main() {
   Complex C1, C2, C3;
 
-  C1.getdata();
+  C1 = C1.getdata();
   C1.display();
-  C2.getdata();
+  C2 = C2.getdata();
   C2.display();
 
   C3 = C2 + C1;
