@@ -44,9 +44,7 @@ void Complex::getdata() {
   cout << "Enter img && real part\n";
   cin >> img >> real;
 
-  display();
-
-  Complex(real, img);
+  *this = Complex(real, img);
 }
 /*********************-END-************************/
 
@@ -54,9 +52,7 @@ int main() {
   Complex C1, C2, C3;
 
   C1.getdata();
-  C1.display();
   C2.getdata();
-  C2.display();
 
   C3 = C2 + C1;
 
