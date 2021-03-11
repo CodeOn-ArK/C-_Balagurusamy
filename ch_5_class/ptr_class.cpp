@@ -1,30 +1,23 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
-class A
-{
-  private:
-    int x;
-    A *p;
+class A {
+ private:
+  int x;
+  A *p;
 
-  public:
-    void setdata(int d, A *pb)
-    {
-      x = d;
-      p = pb;
-    }
+ public:
+  void setdata(int d, A *pb) {
+    x = d;
+    p = pb;
+  }
 
-    void display(void)
-    {
-      cout << x << "\t " << p->x << endl;
-    }
+  void display(void) { cout << x << "\t " << p->x << endl; }
 };
 
-
-int main()
-{
-  A a,b;
+int main() {
+  A a, b;
 
   a.setdata(10, &b);
   b.setdata(20, &a);
@@ -33,5 +26,4 @@ int main()
   b.display();
 
   return 0;
-  
 }
