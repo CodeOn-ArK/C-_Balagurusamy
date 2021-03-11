@@ -4,9 +4,16 @@
 using namespace std;
 
 int main() {
-  int m = 0;
-  char str[] = "C++ better than C\n";
+  int m = 0, size = 0;
+  char *str;
   int len = strlen(str);
+
+  cout << "\nEnter the string size\n";
+  cin >> size;
+
+  str = new char[size];
+  cout << "\nEnter string \n";
+  cin >> str;
 
   char *head;
   char *substr = new char[len];
@@ -17,7 +24,6 @@ int main() {
 
   for (int i = 0; i < len; i++) {
     if (*substr == str[i])
-
       for (; (*substr != '\0' || str[i] != '\0');) {
         if (*substr++ == str[i++]) {
           m++;
