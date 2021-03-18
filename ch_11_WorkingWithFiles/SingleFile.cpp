@@ -2,8 +2,13 @@
 #include <iostream>
 using namespace std;
 
+/*
+ * Can anyone fix the TODO ? I want to create files and read them in /dev from
+ * my present directory. Please help
+ */
+
 int main() {
-  ofstream outf("../../../../dev/TEMP");  // TODO
+  ofstream outf("/dev/TEMP");  // TODO
 
   cout << "Enter Item Details\n";
   char name[30];
@@ -18,7 +23,7 @@ int main() {
   outf << cost << endl;
   outf.close();
 
-  ifstream inf("../../../../dev/TEMP");  // TODO
+  ifstream inf("/dev/TEMP");  // TODO
 
   inf >> name;
   inf >> cost;
