@@ -1,18 +1,18 @@
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 using namespace std;
 
-/*
- * Can anyone fix the TODO ? I want to create files and read them in /dev from
- * my present directory. Please help
- */
-
 int main() {
-  ofstream outf("/dev/TEMP");  // TODO
+  ofstream outf;
 
   cout << "Enter Item Details\n";
   char name[30];
   cin >> name;
+
+  outf.open("ITEM", ios::binary | ios::nocreate | ios::out);
+
+  if (!outf) cout << "Open failed\n";
 
   outf << name << "\n";
 
@@ -23,7 +23,7 @@ int main() {
   outf << cost << endl;
   outf.close();
 
-  ifstream inf("/dev/TEMP");  // TODO
+  ifstream inf("ITEM");  // TODO
 
   inf >> name;
   inf >> cost;
@@ -32,6 +32,5 @@ int main() {
   cout << "Item cost: " << cost << endl;
 
   inf.close();
-
   return 0;
 }
