@@ -1,3 +1,4 @@
+#include <cstring>
 #include <iostream>
 
 using namespace std;
@@ -12,8 +13,9 @@ int main() {
   */
   cout << "Enter city name: \n";
   cin.getline(city, size, '\n');
+  strcat(city, "\n");
   cout << "City name: " << city << endl << endl;
-  //  if (cin) cin.ignore(20, '\n');
+  cin.ignore(20, '\n');
 
   cout << "Enter city name: \n";
   cin.getline(city, size);
