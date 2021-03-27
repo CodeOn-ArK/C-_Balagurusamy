@@ -4,23 +4,17 @@
 using namespace std;
 
 int main() {
-<<<<<<< HEAD
   ofstream outf;
-=======
-  ofstream outf("/dev/TEMP");
+  outf.open("ITEM", ios::binary | ios::out);
 
-  // TODO: Needs better error reporting
   if (outf.fail()) {
-      cout << "Couldn't open the file!" << endl;
-      return 1;
+    cout << "Couldn't open the file!" << endl;
+    return 1;
   }
->>>>>>> 205ae9891713afeee00c977e22cb527f2f51e0cc
 
   cout << "Enter Item Details\n";
   char name[30];
   cin >> name;
-
-  outf.open("ITEM", ios::binary | ios::nocreate | ios::out);
 
   if (!outf) cout << "Open failed\n";
 
@@ -33,17 +27,12 @@ int main() {
   outf << cost << endl;
   outf.close();
 
-<<<<<<< HEAD
-  ifstream inf("ITEM");  // TODO
-=======
-  ifstream inf("/dev/TEMP");
+  ifstream inf("ITEM", ios::in);
 
-  // TODO: Needs better error reporting
   if (inf.fail()) {
-      cout << "Couldn't open the file!" << endl;
-      return 1;
+    cout << "Couldn't open the file!" << endl;
+    return 1;
   }
->>>>>>> 205ae9891713afeee00c977e22cb527f2f51e0cc
 
   inf >> name;
   inf >> cost;
