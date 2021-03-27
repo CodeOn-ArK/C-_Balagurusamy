@@ -14,6 +14,7 @@ ostream& form(ostream& output) {
 
   output.fill('*');
   output.precision(2);
+  output.setf(ios::internal, ios::adjustfield);
 
   output << setiosflags(ios::fixed) << setw(10);
 
