@@ -1,9 +1,8 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
 #if 0
   //question 1
   int x, y, &ptr_x = x, &ptr_y = y;
@@ -52,12 +51,11 @@ int main()
 #endif
 
 #if 1
-//question 4
+  // question 4
 
-  cout << "\nEnter invested value && rate && number of years\n" ;
+  cout << "\nEnter invested value && rate && number of years\n";
 
-  int v, 
-  v *= recursive(r, n);
+  int v, v *= recursive(r, n);
 
 #endif
   return 0;

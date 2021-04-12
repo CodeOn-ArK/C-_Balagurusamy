@@ -1,9 +1,8 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
   int x = 10;
   int *ptr;
 
@@ -15,7 +14,7 @@ int main()
   cout << "\nptr\t" << ptr << "\t*ptr\t" << *ptr;
 
   cout << "\ny\t" << y << endl;
-  
+
   x = 20;
   cout << "\ny\t" << y << endl;
 
