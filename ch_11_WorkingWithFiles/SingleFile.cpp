@@ -13,7 +13,7 @@ int main() {
   }
 
   cout << "Enter Item Details\n";
-  char name[30];
+  string name;
   cin >> name;
 
   if (!outf) cout << "Open failed\n";
