@@ -1,3 +1,4 @@
+#include <cstring>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -16,6 +17,7 @@ class INVENTORY {
  public:
   void readData(void);
   void writeData(void);
+  char* getName(void);
 };
 
 /******************-FUNCTIONS-*********************/
@@ -29,10 +31,11 @@ void INVENTORY::readData(void) {
 }
 
 void INVENTORY::writeData(void) {
-  cout << setiosflags(ios::left) << setw(10) << name << setiosflags(ios::right)
-       << setw(10) << code << setprecision(2) << setw(10) << cost << endl;
+  cout << setw(10) << this->name << setiosflags(ios::right) << setw(10)
+       << this->code << setprecision(2) << setw(10) << this->cost << endl;
 }
 
+char* INVENTORY::getName(void) { return this->name; }
 /*********************-END-************************/
 
 int main() {
@@ -41,22 +44,29 @@ int main() {
 
   fstream file;
 
-  file.open("STOCK.DAT", ios::in | ios::out);
+  file.open("../ch_11_WorkingWithFiles/files/STOCK.DAT", ios::out);
+  file.close();
+
+  file.open("../ch_11_WorkingWithFiles/files/STOCK.DAT", ios::in | ios::out);
   cout << "\nEnter Details for three items\n";
 
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 2; i++) {
     item[i].readData();
 
-    file.write((char *)&item[i], sizeof(item[i]));
+    file.write((char*)&item[i], sizeof(item[i]));
   }
 
   file.seekg(0);
   INVENTORY tom[3];
 
-  cout << "\nOUTPUT\n";
-  for (int i = 0; i < 3; i++) {
-    file.read((char *)&item[i], sizeof(item[i]));
-    item[i].writeData();
+  cout << "\n\t\tOUTPUT\n"
+       << "-----------------------------------------\n"
+       << "\tName"
+       << "\tCode"
+       << "\tCost\n";
+  for (int i = 0; i < 2; i++) {
+    file.read((char*)&tom[i], sizeof(tom[i]));
+    if (!strcmp(tom[i].getName(), "Saheb")) tom[i].writeData();
   }
 
   file.close();
